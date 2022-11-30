@@ -37,7 +37,7 @@ ISR(INT0_vect){
             _delay_ms(50);
         }
         switch(mode_select){
-            case 0:
+            case 0: //Clock Time
                 if(time_select==0){
                     if(MIN<60){
                         MIN++;
@@ -57,7 +57,7 @@ ISR(INT0_vect){
                         HOUR = 0;
                     }
                 }
-            case 1:
+            case 1: //Alarm Time
                 if(time_select==0){
                     if(ALM_MIN<60){
                         ALM_MIN++;
@@ -127,6 +127,14 @@ int main(void){
         }
         else{
             PORTB &= ~(1<<PB3);
+        }
+
+        //Condition for alarm to go off
+        if((ALRM==1)&&((ALM_MIN&&ALM_HR)==0)){
+            PORTB |= (1<<PB0)|(1<<PB3);
+            _delay_ms(50);
+            PORTB &= ~((1<<PB0)|(1<<PB3));
+            _delay_ms(50);
         }
     }
     
