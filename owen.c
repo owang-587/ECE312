@@ -12,16 +12,10 @@
 
 int main(void){
 
-    //timer for 1ms overflow
+    //CTC mode
     
 
-
-    //set up PWM when alarm = 1
-
-    //initialize output pin, set low
-    PORTB &= ~(1<<PB1);
-    DDRB |= (1<<PB1); 
-    
+    //set up PWM when alarm = 1    
     //initialize PWM, N=8
     ICR1 = 1250; //TOP value
     OCR1A = 625; //50% duty cycle at equilibrium
