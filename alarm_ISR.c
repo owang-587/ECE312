@@ -15,9 +15,9 @@
  * 
  */
 ISR(INT1_vect){
-    PORTB&=~(1<<PB0);
-    ALARM = 0;
-    PORTB&=~(1<<PB3);
+    PORTB&=~(1<<PB0); //Setting the Piezo buzzer to '0'
+    alarmState = 0; // Setting the alarm countdown off
+    PORTB&=~(1<<PB3); // Toggling the LED to off 
     
 } 
 
