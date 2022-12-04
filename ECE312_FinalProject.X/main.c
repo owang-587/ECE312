@@ -216,6 +216,9 @@ void mcu_Init(){
     DDRD &= ~((1<<PD2)|(1<<PD3)|(1<<PD4)|(1<<PD5)|(1<<PD7)); // Enable PD2, PD3, PD4, PD5, PD7 as input
     PORTD |= (1<<PD2)|(1<<PD3)|(1<<PD4)|(1<<PD5)|(1<<PD7); // Enable pull-up on PD2, PD3, PD4, PD5, PD7
     
+    DDRD |= (1<<PD6); // Initialize OC0A as an output
+    PORTD &= ~(1<<PD6); // Output low on PD6
+    
     DDRB |= (1<<PB3); // Make PB3 an output
     PORTB &= ~(1<<PB3); // Output low
     
