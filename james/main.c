@@ -79,14 +79,14 @@ ISR(INT0_vect, ISR_BLOCK) {
 
         // If PD5 button is pressed and the clock is selected for changing, increment selected time value
         if (!(PIND & (1<<PD5)) && configState == 1) {
-            if (timeState == 0 && almHours < 23) { // Increment hours from 0 to 23 hours
-                almHours++;
-            } else if (timeState == 0 && almHours == 23) { // When incrementing at 23, reset to 0 hours which is equivalent to 24 hours
-                almHours = 0;
-            } else if (timeState == 1 && almMinutes < 59) { // Increment minutes from 0 to 59 minutes
-                almMinutes++;
-            } else if (timeState == 1 && almMinutes == 59) { // When incrementing at 59 minutes, reset to 0 minutes which is equivalent to 60 minutes
-                almMinutes = 0;
+            if (timeState == 0 && Hours < 23) { // Increment hours from 0 to 23 hours
+                Hours++;
+            } else if (timeState == 0 && Hours == 23) { // When incrementing at 23, reset to 0 hours which is equivalent to 24 hours
+                Hours = 0;
+            } else if (timeState == 1 && Minutes < 59) { // Increment minutes from 0 to 59 minutes
+                Minutes++;
+            } else if (timeState == 1 && Minutes == 59) { // When incrementing at 59 minutes, reset to 0 minutes which is equivalent to 60 minutes
+                Minutes = 0;
             }
         }
         
