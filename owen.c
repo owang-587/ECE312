@@ -2,16 +2,17 @@
 
 int main(void){
 
-    //CTC mode
-    TCCR0A = 0;
-    TCCR0B |= (1<<WGM2) | (1<<CS10); //mode 4, prescaler /1
-    OCR0A = (); //interrupt every 1ms 
-    TIFR |= (1<<OCF0A); //clr existing flags
+    //CTC mode (timer 1)
+    TCCR1A = 0;
+    TCCR1B |= (1<<WGM12) | (1<<CS10); //mode 4, prescaler /1
+    OCR1A = (1250-1); //interrupt every 1ms 
+    TIFR |= (1<<OCF1A); //clr existing flags
 
     while(1){
-        while (1(TIFR &(1<<OCF0A)))
-        TIFR |= (1<<OFR0A); //clr flags
+        while (!(TIFR &(1<<OCF1A)))
+        TIFR |= (1<<OCF1A); //clr flags
 
+        /* continue */
 
     }
 
