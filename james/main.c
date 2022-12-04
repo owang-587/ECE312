@@ -21,6 +21,12 @@
  * 
  */
 
+/*
+    Hours. Minutes correspond to the clock
+    almHours, almMinutes correspond to the alarm
+    timeState is used to configure either the hours or minutes of both the clock and alarm
+    alarmState is used to determine if the alarm has been set or not
+*/
 volatile uint8_t Hours, Minutes;
 volatile uint8_t almHours, almMinutes;
 volatile int timeState = 0;
