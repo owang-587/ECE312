@@ -15,7 +15,7 @@ int main(void){
         /* continue */
 
     }
-    
+
     //set up PWM when alarm = 1    
     //initialize PWM, N=8
     ICR1 = 156; //TOP value
