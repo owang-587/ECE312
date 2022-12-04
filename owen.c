@@ -35,7 +35,7 @@ f_OCR0A = f_clk/(2*N*(1+OCR0A))
 f_OCR0A = 1ms = 1000Hz
 f_clk = 20MHz/8 = 2.5MHz
 N*(1+TOP) = 2500 ---------> N = 1
-*\
+*/
 
 /* PWM initialization (timer 0)
 freq calc:
@@ -43,4 +43,4 @@ f_PWM = f_clk/(2*N*TOP)
 f_PWM = 1ms = 1000Hz
 f_clk = 20MHz/8 = 2.5MHz
 N*TOP = 1250 ------> N = 1
-*\
+*/
