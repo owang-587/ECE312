@@ -1,18 +1,20 @@
-#include "defines.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <avr/io.h>
-#include <avr/interrupt.h>
-#include <util/delay.h>
-#include "hd44780.h"
-#include "lcd.h"
-
 //ext osc. 20MHz //CKDIV8
-
 
 int main(void){
 
     //CTC mode
+    TCCR0A = 0;
+    TCCR0B |= (1<<WGM2) | (1<<CS10); //mode 4, prescaler /1
+    OCR0A = (); //interrupt every 1ms 
+    TIFR |= (1<<OCF0A); //clr existing flags
+
+    while(1){
+        while (1(TIFR &(1<<OCF0A)))
+        TIFR |= (1<<OFR0A); //clr flags
+
+
+    }
+
     
 
     //set up PWM when alarm = 1    
@@ -25,8 +27,16 @@ int main(void){
     return (0);
 }
 
-/*
-freq calc
+/* CTC mode initialization (timer 1)
+freq calc:
+f_OCR0A = f_clk/(2*N*(1+OCR0A))
+f_OCR0A = 1ms = 1000Hz
+f_clk = 20MHz/8 = 2.5MHz
+N*(1+TOP) = 1250 ---------> N = 1
+*\
+
+/* PWM initialization (timer 0)
+freq calc:
 f_PWM = f_clk/(2*N*TOP)
 f_PWM = 1ms = 1000Hz
 f_clk = 20MHz/8 = 2.5MHz
