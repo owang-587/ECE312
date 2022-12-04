@@ -20,11 +20,10 @@ int main(void){
 
     //set up PWM when alarm = 1    
     //initialize PWM, N=8
-    ICR1 = 1250; //TOP value
-    OCR1A = 625; //50% duty cycle at equilibrium
-    TCCR1A = (1<<COM1B1)|(1<<WGM11); //generate waveform in normal mode
-    TCCR1B = (1<<WGM13)|(1<<CS10); //(WGM13:10 = 0b1010), (CS12:10 = 0b001) 
-    TCCR0B = (1<<WGM02)
+    ICR1 = 156; //TOP value
+    OCR1A = 78; //50% duty cycle at equilibrium
+    TCCR0A = (1<<WGM00) | (1<<COM0A1); //set OC0A on compare-match when down-count
+    TCCR0B = (1<<WGM02) | (1<<CS01); //mode 5, prescaler /8
 
     return (0);
 }
@@ -42,5 +41,6 @@ freq calc:
 f_PWM = f_clk/(2*N*TOP)
 f_PWM = 1ms = 1000Hz
 f_clk = 20MHz/8 = 2.5MHz
-N*TOP = 1250 ------> N = 1
+N*TOP = 1250 ------> N = 8
+TOP = 156
 *\
