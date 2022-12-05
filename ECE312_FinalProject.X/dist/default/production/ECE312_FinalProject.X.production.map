@@ -45,15 +45,11 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/hd44780.o
  .data          0x0000000000000000        0x0 build/default/production/hd44780.o
  .bss           0x0000000000000000        0x0 build/default/production/hd44780.o
- .text.hd44780_init
-                0x0000000000000000       0x78 build/default/production/hd44780.o
  .text.hd44780_powerdown
                 0x0000000000000000        0xe build/default/production/hd44780.o
  .text          0x0000000000000000        0x0 build/default/production/lcd.o
  .data          0x0000000000000000        0x0 build/default/production/lcd.o
  .bss           0x0000000000000000        0x0 build/default/production/lcd.o
- .text.lcd_init
-                0x0000000000000000       0x30 build/default/production/lcd.o
  .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
@@ -281,7 +277,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0xc72
+.text           0x0000000000000000      0xd22
  *(.vectors)
  .vectors       0x0000000000000000       0x68 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
                 0x0000000000000000                __vector_default
@@ -373,58 +369,64 @@ END GROUP
                 0x000000000000025c       0x2c build/default/production/main.o
                 0x000000000000025c                __vector_2
  .text.mcu_Init
-                0x0000000000000288       0x46 build/default/production/main.o
+                0x0000000000000288       0x4a build/default/production/main.o
                 0x0000000000000288                mcu_Init
- .text.main     0x00000000000002ce      0x2e0 build/default/production/main.o
-                0x00000000000002ce                main
+ .text.main     0x00000000000002d2      0x2e4 build/default/production/main.o
+                0x00000000000002d2                main
  .text.hd44780_outnibble
-                0x00000000000005ae       0x20 build/default/production/hd44780.o
+                0x00000000000005b6       0x20 build/default/production/hd44780.o
  .text.hd44780_innibble
-                0x00000000000005ce       0x34 build/default/production/hd44780.o
+                0x00000000000005d6       0x34 build/default/production/hd44780.o
  .text.hd44780_outbyte
-                0x0000000000000602       0x20 build/default/production/hd44780.o
-                0x0000000000000602                hd44780_outbyte
+                0x000000000000060a       0x20 build/default/production/hd44780.o
+                0x000000000000060a                hd44780_outbyte
  .text.hd44780_inbyte
-                0x0000000000000622       0x1e build/default/production/hd44780.o
-                0x0000000000000622                hd44780_inbyte
+                0x000000000000062a       0x1e build/default/production/hd44780.o
+                0x000000000000062a                hd44780_inbyte
  .text.hd44780_wait_ready
-                0x0000000000000640        0xc build/default/production/hd44780.o
-                0x0000000000000640                hd44780_wait_ready
+                0x0000000000000648        0xc build/default/production/hd44780.o
+                0x0000000000000648                hd44780_wait_ready
+ .text.hd44780_init
+                0x0000000000000654       0x78 build/default/production/hd44780.o
+                0x0000000000000654                hd44780_init
+ .text.lcd_init
+                0x00000000000006cc       0x30 build/default/production/lcd.o
+                0x00000000000006cc                lcd_init
  .text.lcd_putchar
-                0x000000000000064c       0x4e build/default/production/lcd.o
-                0x000000000000064c                lcd_putchar
+                0x00000000000006fc       0x4e build/default/production/lcd.o
+                0x00000000000006fc                lcd_putchar
  .text.avr-libc
-                0x000000000000069a       0x24 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
-                0x000000000000069a                fprintf
+                0x000000000000074a       0x24 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
+                0x000000000000074a                fprintf
  .text.avr-libc
-                0x00000000000006be       0x46 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
-                0x00000000000006be                sprintf
+                0x000000000000076e       0x46 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
+                0x000000000000076e                sprintf
  .text.avr-libc
-                0x0000000000000704      0x3b4 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
-                0x0000000000000704                vfprintf
+                0x00000000000007b4      0x3b4 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+                0x00000000000007b4                vfprintf
  .text.avr-libc
-                0x0000000000000ab8       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                0x0000000000000ab8                strnlen_P
+                0x0000000000000b68       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x0000000000000b68                strnlen_P
  .text.avr-libc
-                0x0000000000000ace       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                0x0000000000000ace                strnlen
+                0x0000000000000b7e       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x0000000000000b7e                strnlen
  .text.avr-libc
-                0x0000000000000ae4       0x60 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
-                0x0000000000000ae4                fputc
+                0x0000000000000b94       0x60 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x0000000000000b94                fputc
  .text.avr-libc
-                0x0000000000000b44       0xbc c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                0x0000000000000b44                __ultoa_invert
+                0x0000000000000bf4       0xbc c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                0x0000000000000bf4                __ultoa_invert
  .text.libgcc.prologue
-                0x0000000000000c00       0x38 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_prologue.o)
-                0x0000000000000c00                __prologue_saves__
+                0x0000000000000cb0       0x38 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_prologue.o)
+                0x0000000000000cb0                __prologue_saves__
  .text.libgcc.prologue
-                0x0000000000000c38       0x36 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_epilogue.o)
-                0x0000000000000c38                __epilogue_restores__
-                0x0000000000000c6e                . = ALIGN (0x2)
+                0x0000000000000ce8       0x36 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_epilogue.o)
+                0x0000000000000ce8                __epilogue_restores__
+                0x0000000000000d1e                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000c6e        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
-                0x0000000000000c6e                _exit
-                0x0000000000000c6e                exit
+ .fini9         0x0000000000000d1e        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x0000000000000d1e                _exit
+                0x0000000000000d1e                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -443,11 +445,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000c6e        0x4 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x0000000000000d1e        0x4 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000c72                _etext = .
+                0x0000000000000d22                _etext = .
 
-.data           0x0000000000800100       0x40 load address 0x0000000000000c72
+.data           0x0000000000800100       0x40 load address 0x0000000000000d22
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -490,8 +492,8 @@ END GROUP
                 0x000000000080014b                Minutes
                 0x000000000080014c                Seconds
                 0x000000000080014d                PROVIDE (__bss_end, .)
-                0x0000000000000c72                __data_load_start = LOADADDR (.data)
-                0x0000000000000cb2                __data_load_end = (__data_load_start + SIZEOF (.data))
+                0x0000000000000d22                __data_load_start = LOADADDR (.data)
+                0x0000000000000d62                __data_load_end = (__data_load_start + SIZEOF (.data))
 
 .noinit         0x000000000080014d        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
@@ -504,14 +506,18 @@ END GROUP
  *(.eeprom*)
                 0x0000000000810000                __eeprom_end = .
 
-.fuse
+.fuse           0x0000000000820000        0x3
  *(.fuse)
+ .fuse          0x0000000000820000        0x3 build/default/production/main.o
+                0x0000000000820000                __fuse
  *(.lfuse)
  *(.hfuse)
  *(.efuse)
 
-.lock
+.lock           0x0000000000830000        0x1
  *(.lock*)
+ .lock          0x0000000000830000        0x1 build/default/production/main.o
+                0x0000000000830000                __lock
 
 .signature
  *(.signature*)

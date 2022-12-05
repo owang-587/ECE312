@@ -28,6 +28,14 @@
  * 
  */
 
+FUSES = {
+	.low = 0x7F, // LOW {SUT_CKSEL=EXTXOSC_8MHZ_XX_16KCK_14CK_65MS, CKOUT=CLEAR, CKDIV8=SET}
+	.high = 0xD9, // HIGH {BOOTRST=CLEAR, BOOTSZ=2048W_3800, EESAVE=CLEAR, WDTON=CLEAR, SPIEN=SET, DWEN=CLEAR, RSTDISBL=CLEAR}
+	.extended = 0xFF, // EXTENDED {BODLEVEL=DISABLED}
+};
+
+LOCKBITS = 0xFF; // {LB=NO_LOCK, BLB0=NO_LOCK, BLB1=NO_LOCK}
+
 /*
     Hours. Minutes correspond to the clock
     almHours, almMinutes correspond to the alarm
@@ -126,6 +134,7 @@ int main(void) {
     mcu_Init(); // Initialize registers
     int counter = 0;
     int almCounter = 0;
+    lcd_init();
     
     sei();
     
