@@ -140,11 +140,14 @@ FILE lcd_str = FDEV_SETUP_STREAM ( lcd_putchar , NULL , _FDEV_SETUP_WRITE); // t
 int main(void) {
     mcu_Init(); // Initialize registers
     lcd_init();
+    fprintf(&lcd_str, "\x1b\x01Clock\x1b\xc0Alarm"); // Print a general string to the LCD
     sei();
     
+    /************************** FOR TESTING **********************************/
     //alarmState = 1;
     almMinutes = 1;
     almSeconds = 30;
+    /*************************************************************************/
     
     while(1){
         while (!(TIFR1 &(1<<OCF1A)));
@@ -152,24 +155,32 @@ int main(void) {
         // Refresh LCD every second for the displayed clock time
         if (prevSec != Seconds) {
             if (Seconds == 60) {
+                cli();
                 prevSec = 0;
+                sei();
             }
             fprintf(&lcd_str, "\x1b\x01");
             printClkTime();
         }
-    
+        
+        cli();
         prevSec = Seconds;
-
+        sei();
+        
         // Refresh the LCD every second for the displayed alarm time
         if (prevAlmSec != almSeconds) {
             if (almSeconds == 59) {
+                cli();
                 prevAlmSec = 59;
+                sei();
             }
             fprintf(&lcd_str, "\x1b\xc0");
             printAlmTime();
         }    
         
+        cli();
         prevAlmSec = almSeconds;
+        sei();
         
         cli();
         clkIncrement();
