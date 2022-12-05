@@ -149,7 +149,7 @@ int main(void) {
     while(1){
         while (!(TIFR1 &(1<<OCF1A)));
         TIFR1 |= (1<<OCF1A); //clear flags
-
+        // Refresh LCD every second for the displayed clock time
         if (prevSec != Seconds) {
             if (Seconds == 60) {
                 prevSec = 0;
@@ -160,15 +160,14 @@ int main(void) {
     
         prevSec = Seconds;
 
+        // Refresh the LCD every second for the displayed alarm time
         if (prevAlmSec != almSeconds) {
             if (almSeconds == 59) {
                 prevAlmSec = 59;
             }
-//            fprintf(&lcd_str, "\x1b\x01");
+            fprintf(&lcd_str, "\x1b\xc0");
             printAlmTime();
-//            fprintf(&lcd_str, "\x1b\x01%u:%u:%u", almHours, almMinutes, almSeconds);
-        }
-        
+        }    
         
         prevAlmSec = almSeconds;
         
@@ -181,6 +180,7 @@ int main(void) {
 //        }
         sei();
         
+        // If the alarm is set, indicate that it is using the LED
         if(alarmState == 1) {
             PORTB |= (1<<PB3); // Turn LED on
         } else {
