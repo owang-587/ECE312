@@ -40,13 +40,13 @@
     Hours. Minutes correspond to the clock
     almHours, almMinutes correspond to the alarm
     timeState is used to configure either the hours or minutes of both the clock and alarm
-    alarmState is used to determine if the alarm has been set or not
+    almState is used to determine if the alarm has been set or not
 */
 volatile uint8_t Hours, Minutes, Seconds;
 volatile uint8_t almHours, almMinutes, almSeconds;
 volatile int timeState = 0;
 volatile int configState = 0;
-volatile int alarmState = 0;
+volatile int almState = 0;
 volatile uint8_t prevSec = 0;
 volatile uint8_t prevAlmSec = 0;
 volatile int counter, almCounter;
@@ -66,8 +66,8 @@ ISR(INT0_vect, ISR_BLOCK) {
        configState == 1 -- Select Clock
        timeState == 0 -- Select Hours
        timeState == 1 -- Select Minutes
-       alarmState == 0 -- Alarm is not set
-       alarmState == 1 -- Alarm is set*/
+       almState == 0 -- Alarm is not set
+       almState == 1 -- Alarm is set*/
     EIFR |= (1<<INTF0); // Clear the interrupt flag
     EIMSK &= ~(1<<INT1); // Disable external interrupt 1
     
@@ -76,7 +76,7 @@ ISR(INT0_vect, ISR_BLOCK) {
     almMinutes = 0;
     configState = 0;
     timeState = 0;
-    alarmState = 0;
+    almState = 0;
     
     // Wait for PD4 button to be pressed to exit the while loop
     while(!(PIND & (1<<PD4))) {
@@ -117,22 +117,20 @@ ISR(INT0_vect, ISR_BLOCK) {
         }
     }
     
-    // Set the alarmState to 'on' if an alarm value was set
+    // Set the almState to 'on' if an alarm value was set
     if (configState == 0 && (almHours > 0 || almMinutes > 0)) {
-        alarmState = 1;
+        almState = 1;
     }    
     
     EIMSK |= (1<<INT1); // Enable external interrupt 1
 }
 
 ISR(INT1_vect){
-    alarmState = 0; // Setting the alarm countdown off
+    almState = 0; // Setting the alarm countdown off
     almHours = 99; // No alarm time
     
     OCR0A = 0; //0% duty cycle at equilibrium
-    
-    PORTB &= ~(1<<PB0); //Setting the Piezo buzzer to '0'
-    PORTB &= ~(1<<PB3); // Toggling the LED to off   
+    PORTB &= ~(1<<PB0); // Toggling the LED to off   
 } 
 
 FILE lcd_str = FDEV_SETUP_STREAM ( lcd_putchar , NULL , _FDEV_SETUP_WRITE); // to create global variable for LCD stream
@@ -140,11 +138,11 @@ FILE lcd_str = FDEV_SETUP_STREAM ( lcd_putchar , NULL , _FDEV_SETUP_WRITE); // t
 int main(void) {
     mcu_Init(); // Initialize registers
     lcd_init();
-    fprintf(&lcd_str, "\x1b\x01Clock\x1b\xc0Alarm"); // Print a general string to the LCD
+    fprintf(&lcd_str, "\x1b\x0c");
     sei();
-    
+
     /************************** FOR TESTING **********************************/
-    //alarmState = 1;
+    almState = 1;
     almMinutes = 1;
     almSeconds = 30;
     /*************************************************************************/
@@ -186,16 +184,16 @@ int main(void) {
         clkIncrement();
         almDecrement();
 
-//        if (alarmState == 0) {
-//            almHours = 99;
-//        }
+        if (almState == 0) {
+            almHours = 99;
+        }
         sei();
         
         // If the alarm is set, indicate that it is using the LED
-        if(alarmState == 1) {
-            PORTB |= (1<<PB3); // Turn LED on
+        if(almState == 1) {
+            PORTB |= (1<<PB0); // Turn LED on
         } else {
-            PORTB &= ~(1<<PB3); // Turn LED off
+            PORTB &= ~(1<<PB0); // Turn LED off
         }
     }
     
@@ -209,8 +207,8 @@ void mcu_Init(){
     DDRD |= (1<<PD6); // Initialize OC0A as an output
     PORTD &= ~(1<<PD6); // Output low on PD6
     
-    DDRB |= (1<<PB3); // Make PB3 an output
-    PORTB &= ~(1<<PB3); // Output low
+    DDRB |= (1<<PB0); // Make PB0 an output
+    PORTB &= ~(1<<PB0); // Output low
     
     //CTC mode (timer 1)
     TCCR1A = 0;
@@ -225,6 +223,8 @@ void mcu_Init(){
     //initialize PWM, N=8
     TCCR0A = (1<<WGM00) | (1<<COM0A1); //set OC0A on compare-match when down-count
     TCCR0B = (1<<WGM02) | (1<<CS01); //mode 5, pre-scaler = 8
+    
+    TCCR2A = 0;
 }
 
 void clkIncrement(){
@@ -249,7 +249,7 @@ void clkIncrement(){
 
 void almDecrement(){
         /* This chain of if statements is for counting down the alarm*/
-        if (1>0) {
+        if (almState == 1) {
             almCounter++; // almCounter is in ms
             if(almCounter == 1000){
                 if (almSeconds <= 59 && almSeconds > 0){
@@ -280,7 +280,7 @@ void almDecrement(){
             }  
         }
 
-        if (almHours == 0 && almMinutes == 0 && almSeconds == 0 && alarmState == 1){
+        if (almHours == 0 && almMinutes == 0 && almSeconds == 0 && almState == 1){
                 // Trigger alarm
                 OCR0A = 78; //50% duty cycle at equilibrium
             }    
