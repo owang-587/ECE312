@@ -169,7 +169,7 @@
         <property key="remove-unused-sections" value="true"/>
         <property key="rodata-writable" value="false"/>
         <property key="sram-segment" value=""/>
-        <property key="v-printf" value="false"/>
+        <property key="v-printf" value="true"/>
       </AVR-LD>
       <Tool>
         <property key="AutoSelectMemRanges" value="auto"/>

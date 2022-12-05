@@ -28,13 +28,13 @@
  * 
  */
 
-FUSES = {
-	.low = 0x7F, // LOW {SUT_CKSEL=EXTXOSC_8MHZ_XX_16KCK_14CK_65MS, CKOUT=CLEAR, CKDIV8=SET}
-	.high = 0xD9, // HIGH {BOOTRST=CLEAR, BOOTSZ=2048W_3800, EESAVE=CLEAR, WDTON=CLEAR, SPIEN=SET, DWEN=CLEAR, RSTDISBL=CLEAR}
-	.extended = 0xFF, // EXTENDED {BODLEVEL=DISABLED}
-};
-
-LOCKBITS = 0xFF; // {LB=NO_LOCK, BLB0=NO_LOCK, BLB1=NO_LOCK}
+//FUSES = {
+//	.low = 0x7F, // LOW {SUT_CKSEL=EXTXOSC_8MHZ_XX_16KCK_14CK_65MS, CKOUT=CLEAR, CKDIV8=SET}
+//	.high = 0xD9, // HIGH {BOOTRST=CLEAR, BOOTSZ=2048W_3800, EESAVE=CLEAR, WDTON=CLEAR, SPIEN=SET, DWEN=CLEAR, RSTDISBL=CLEAR}
+//	.extended = 0xFF, // EXTENDED {BODLEVEL=DISABLED}
+//};
+//
+//LOCKBITS = 0xFF; // {LB=NO_LOCK, BLB0=NO_LOCK, BLB1=NO_LOCK}
 
 /*
     Hours. Minutes correspond to the clock
@@ -47,8 +47,10 @@ volatile uint8_t almHours, almMinutes, almSeconds;
 volatile int timeState = 0;
 volatile int configState = 0;
 volatile int alarmState = 0;
+volatile uint8_t prevSec = 0;
 
 void mcu_Init();
+void printTime();
 
 ISR(INT0_vect, ISR_BLOCK) {
     /* PD6 (SW1) -- Toggle between Hours and Minutes
@@ -132,15 +134,29 @@ FILE lcd_str = FDEV_SETUP_STREAM ( lcd_putchar , NULL , _FDEV_SETUP_WRITE); // t
 
 int main(void) {
     mcu_Init(); // Initialize registers
+    lcd_init();
     int counter = 0;
     int almCounter = 0;
-    lcd_init();
-    
     sei();
+    
+    alarmState = 1;
+    almMinutes = 1;
+    almSeconds = 30;
     
     while(1){
         while (!(TIFR1 &(1<<OCF1A)));
         TIFR1 |= (1<<OCF1A); //clear flags
+
+        if (prevSec != Seconds) {
+            if (Seconds == 60) {
+                prevSec = 0;
+            }
+//            fprintf(&lcd_str, "\x1b\x01");
+//            printTime();
+            fprintf(&lcd_str, "\x1b\x01%u", almSeconds);
+        }
+    
+        prevSec = Seconds;
         
         cli();
         
@@ -166,6 +182,7 @@ int main(void) {
         if (alarmState == 1) {
             almCounter++; // almCounter is in ms
         }
+        almCounter++;
         if(almCounter == 1000 && alarmState == 1){
             if (almSeconds <= 59 && almSeconds > 0){
                 almSeconds--;
@@ -202,15 +219,6 @@ int main(void) {
         }
         sei();
         
-        char clkBuffer[10] = "\0";
-        char almBuffer[10] = "\0";
-        
-        sprintf(clkBuffer, "%02i:%02i", Hours, Minutes);
-        fprintf(&lcd_str, "\x1b\x01Clock   %s", clkBuffer);
-        
-        sprintf(almBuffer, "%02i:%02i:%02i", almHours, almMinutes, almSeconds);
-        fprintf(&lcd_str, "\x1b\x40Alarm   %s", almBuffer); 
-        
         if(alarmState == 1) {
             PORTB |= (1<<PB3); // Turn LED on
         } else {
@@ -246,4 +254,18 @@ void mcu_Init(){
     TCCR0B = (1<<WGM02) | (1<<CS01); //mode 5, pre-scaler = 8
 }
 
-
+void printTime(){
+    char clkBuffer[20];
+    char almBuffer[20];
+    clkBuffer[0] = "\0";
+    almBuffer[0] = "\0";
+    
+    sprintf(clkBuffer, "%02u:%02u:%02u", Hours, Minutes, Seconds);
+    fprintf(&lcd_str, "Clock   %s", clkBuffer);
+    
+//    if (alarmState == 1) {
+//        sprintf(almBuffer, "%02u:%02u:%02u", almHours, almMinutes, almSeconds);
+//        fprintf(&lcd_str, "\x1b\x40Alarm   %s", almBuffer); 
+//    }
+    
+}

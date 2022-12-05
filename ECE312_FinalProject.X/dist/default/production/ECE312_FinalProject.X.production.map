@@ -1,29 +1,31 @@
 Archive member included to satisfy reference by file (symbol)
 
+c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
+                              (vfprintf)
 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
                               C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o (exit)
 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
                               build/default/production/main.o (__do_copy_data)
 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
                               build/default/production/main.o (__do_clear_bss)
+c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_prologue.o)
+                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o) (__prologue_saves__)
+c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_epilogue.o)
+                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o) (__epilogue_restores__)
+c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
+                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o) (__ftoa_engine)
+c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o) (strnlen_P)
+c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o) (strnlen)
 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
                               build/default/production/main.o (fprintf)
+c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o) (fputc)
 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
                               build/default/production/main.o (sprintf)
-c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
-                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o) (vfprintf)
-c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (strnlen_P)
-c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (strnlen)
-c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
-                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (fputc)
 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o) (__ultoa_invert)
-c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_prologue.o)
-                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o) (__prologue_saves__)
-c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_epilogue.o)
-                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o) (__epilogue_restores__)
+                              c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o) (__ultoa_invert)
 
 Allocating common symbols
 Common symbol       size              file
@@ -39,9 +41,17 @@ Discarded input sections
 
  .data          0x0000000000000000        0x0 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
  .bss           0x0000000000000000        0x0 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
+ .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
+ .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
+ .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
  .text          0x0000000000000000        0x0 build/default/production/main.o
  .data          0x0000000000000000        0x0 build/default/production/main.o
  .bss           0x0000000000000000        0x0 build/default/production/main.o
+ .rodata        0x0000000000000000        0x2 build/default/production/main.o
+ .rodata.printTime.str1.1
+                0x0000000000000000       0x1a build/default/production/main.o
+ .text.printTime
+                0x0000000000000000       0x84 build/default/production/main.o
  .text          0x0000000000000000        0x0 build/default/production/hd44780.o
  .data          0x0000000000000000        0x0 build/default/production/hd44780.o
  .bss           0x0000000000000000        0x0 build/default/production/hd44780.o
@@ -98,27 +108,6 @@ Discarded input sections
                 0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
  .text.libgcc.fixed
                 0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
- .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
- .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
- .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
- .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
- .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
- .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
- .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
- .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
- .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
- .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
- .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
- .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
- .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
- .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
- .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
- .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
- .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
- .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
- .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
- .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
- .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
  .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_prologue.o)
  .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_prologue.o)
  .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_prologue.o)
@@ -147,6 +136,30 @@ Discarded input sections
                 0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_epilogue.o)
  .text.libgcc.fixed
                 0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_epilogue.o)
+ .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
+ .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
+ .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
+ .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+ .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+ .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+ .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+ .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+ .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+ .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
+ .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
+ .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
+ .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+ .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
+ .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
+ .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
+ .text.avr-libc
+                0x0000000000000000       0x46 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
+ .comment       0x0000000000000000       0x31 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
+ .text          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+ .data          0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+ .bss           0x0000000000000000        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
 
 Memory Configuration
 
@@ -164,6 +177,8 @@ Linker script and memory map
 
 Address of section .data set to 0x800100
 LOAD C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
+LOAD c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a
+LOAD c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libm.a
 LOAD build/default/production/main.o
 LOAD build/default/production/hd44780.o
 LOAD build/default/production/lcd.o
@@ -277,7 +292,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000      0xd22
+.text           0x0000000000000000     0x107e
  *(.vectors)
  .vectors       0x0000000000000000       0x68 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
                 0x0000000000000000                __vector_default
@@ -291,37 +306,39 @@ END GROUP
  *(.trampolines*)
                 0x0000000000000068                __trampolines_end = .
  *libprintf_flt.a:*(.progmem.data)
+ .progmem.data  0x0000000000000068        0x8 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
  *libc.a:*(.progmem.data)
+ .progmem.data  0x0000000000000070       0xfa c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
  *(.progmem*)
-                0x0000000000000068                . = ALIGN (0x2)
+                0x000000000000016a                . = ALIGN (0x2)
  *(.jumptables)
  *(.jumptables*)
  *(.lowtext)
  *(.lowtext*)
-                0x0000000000000068                __ctors_start = .
+                0x000000000000016a                __ctors_start = .
  *(.ctors)
-                0x0000000000000068                __ctors_end = .
-                0x0000000000000068                __dtors_start = .
+                0x000000000000016a                __ctors_end = .
+                0x000000000000016a                __dtors_start = .
  *(.dtors)
-                0x0000000000000068                __dtors_end = .
+                0x000000000000016a                __dtors_end = .
  SORT(*)(.ctors)
  SORT(*)(.dtors)
  *(.init0)
- .init0         0x0000000000000068        0x0 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
-                0x0000000000000068                __init
+ .init0         0x000000000000016a        0x0 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
+                0x000000000000016a                __init
  *(.init0)
  *(.init1)
  *(.init1)
  *(.init2)
- .init2         0x0000000000000068        0xc C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
+ .init2         0x000000000000016a        0xc C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
  *(.init2)
  *(.init3)
  *(.init3)
  *(.init4)
- .init4         0x0000000000000074       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
-                0x0000000000000074                __do_copy_data
- .init4         0x000000000000008a       0x10 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
-                0x000000000000008a                __do_clear_bss
+ .init4         0x0000000000000176       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_copy_data.o)
+                0x0000000000000176                __do_copy_data
+ .init4         0x000000000000018c       0x10 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_clear_bss.o)
+                0x000000000000018c                __do_clear_bss
  *(.init4)
  *(.init5)
  *(.init5)
@@ -332,101 +349,101 @@ END GROUP
  *(.init8)
  *(.init8)
  *(.init9)
- .init9         0x000000000000009a        0x8 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
+ .init9         0x000000000000019c        0x8 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
  *(.init9)
  *(.text)
- .text          0x00000000000000a2        0x4 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
-                0x00000000000000a2                __vector_22
-                0x00000000000000a2                __vector_24
-                0x00000000000000a2                __vector_12
-                0x00000000000000a2                __bad_interrupt
-                0x00000000000000a2                __vector_6
-                0x00000000000000a2                __vector_3
-                0x00000000000000a2                __vector_23
-                0x00000000000000a2                __vector_25
-                0x00000000000000a2                __vector_11
-                0x00000000000000a2                __vector_13
-                0x00000000000000a2                __vector_17
-                0x00000000000000a2                __vector_19
-                0x00000000000000a2                __vector_7
-                0x00000000000000a2                __vector_5
-                0x00000000000000a2                __vector_4
-                0x00000000000000a2                __vector_9
-                0x00000000000000a2                __vector_21
-                0x00000000000000a2                __vector_15
-                0x00000000000000a2                __vector_8
-                0x00000000000000a2                __vector_14
-                0x00000000000000a2                __vector_10
-                0x00000000000000a2                __vector_16
-                0x00000000000000a2                __vector_18
-                0x00000000000000a2                __vector_20
-                0x00000000000000a6                . = ALIGN (0x2)
+ .text          0x00000000000001a4        0x4 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
+                0x00000000000001a4                __vector_22
+                0x00000000000001a4                __vector_24
+                0x00000000000001a4                __vector_12
+                0x00000000000001a4                __bad_interrupt
+                0x00000000000001a4                __vector_6
+                0x00000000000001a4                __vector_3
+                0x00000000000001a4                __vector_23
+                0x00000000000001a4                __vector_25
+                0x00000000000001a4                __vector_11
+                0x00000000000001a4                __vector_13
+                0x00000000000001a4                __vector_17
+                0x00000000000001a4                __vector_19
+                0x00000000000001a4                __vector_7
+                0x00000000000001a4                __vector_5
+                0x00000000000001a4                __vector_4
+                0x00000000000001a4                __vector_9
+                0x00000000000001a4                __vector_21
+                0x00000000000001a4                __vector_15
+                0x00000000000001a4                __vector_8
+                0x00000000000001a4                __vector_14
+                0x00000000000001a4                __vector_10
+                0x00000000000001a4                __vector_16
+                0x00000000000001a4                __vector_18
+                0x00000000000001a4                __vector_20
+                0x00000000000001a8                . = ALIGN (0x2)
  *(.text.*)
+ .text.avr-libc
+                0x00000000000001a8      0x6c2 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
+                0x00000000000001a8                vfprintf
  .text.__vector_1
-                0x00000000000000a6      0x1b6 build/default/production/main.o
-                0x00000000000000a6                __vector_1
+                0x000000000000086a      0x1b6 build/default/production/main.o
+                0x000000000000086a                __vector_1
  .text.__vector_2
-                0x000000000000025c       0x2c build/default/production/main.o
-                0x000000000000025c                __vector_2
+                0x0000000000000a20       0x2c build/default/production/main.o
+                0x0000000000000a20                __vector_2
  .text.mcu_Init
-                0x0000000000000288       0x4a build/default/production/main.o
-                0x0000000000000288                mcu_Init
- .text.main     0x00000000000002d2      0x2e4 build/default/production/main.o
-                0x00000000000002d2                main
+                0x0000000000000a4c       0x4a build/default/production/main.o
+                0x0000000000000a4c                mcu_Init
+ .text.main     0x0000000000000a96       0xda build/default/production/main.o
+                0x0000000000000a96                main
  .text.hd44780_outnibble
-                0x00000000000005b6       0x20 build/default/production/hd44780.o
+                0x0000000000000b70       0x1a build/default/production/hd44780.o
  .text.hd44780_innibble
-                0x00000000000005d6       0x34 build/default/production/hd44780.o
+                0x0000000000000b8a       0x26 build/default/production/hd44780.o
  .text.hd44780_outbyte
-                0x000000000000060a       0x20 build/default/production/hd44780.o
-                0x000000000000060a                hd44780_outbyte
+                0x0000000000000bb0       0x20 build/default/production/hd44780.o
+                0x0000000000000bb0                hd44780_outbyte
  .text.hd44780_inbyte
-                0x000000000000062a       0x1e build/default/production/hd44780.o
-                0x000000000000062a                hd44780_inbyte
+                0x0000000000000bd0       0x1e build/default/production/hd44780.o
+                0x0000000000000bd0                hd44780_inbyte
  .text.hd44780_wait_ready
-                0x0000000000000648        0xc build/default/production/hd44780.o
-                0x0000000000000648                hd44780_wait_ready
+                0x0000000000000bee        0xc build/default/production/hd44780.o
+                0x0000000000000bee                hd44780_wait_ready
  .text.hd44780_init
-                0x0000000000000654       0x78 build/default/production/hd44780.o
-                0x0000000000000654                hd44780_init
+                0x0000000000000bfa       0x78 build/default/production/hd44780.o
+                0x0000000000000bfa                hd44780_init
  .text.lcd_init
-                0x00000000000006cc       0x30 build/default/production/lcd.o
-                0x00000000000006cc                lcd_init
+                0x0000000000000c72       0x30 build/default/production/lcd.o
+                0x0000000000000c72                lcd_init
  .text.lcd_putchar
-                0x00000000000006fc       0x4e build/default/production/lcd.o
-                0x00000000000006fc                lcd_putchar
- .text.avr-libc
-                0x000000000000074a       0x24 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
-                0x000000000000074a                fprintf
- .text.avr-libc
-                0x000000000000076e       0x46 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
-                0x000000000000076e                sprintf
- .text.avr-libc
-                0x00000000000007b4      0x3b4 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
-                0x00000000000007b4                vfprintf
- .text.avr-libc
-                0x0000000000000b68       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                0x0000000000000b68                strnlen_P
- .text.avr-libc
-                0x0000000000000b7e       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                0x0000000000000b7e                strnlen
- .text.avr-libc
-                0x0000000000000b94       0x60 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
-                0x0000000000000b94                fputc
- .text.avr-libc
-                0x0000000000000bf4       0xbc c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                0x0000000000000bf4                __ultoa_invert
+                0x0000000000000ca2       0x4e build/default/production/lcd.o
+                0x0000000000000ca2                lcd_putchar
  .text.libgcc.prologue
-                0x0000000000000cb0       0x38 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_prologue.o)
-                0x0000000000000cb0                __prologue_saves__
+                0x0000000000000cf0       0x38 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_prologue.o)
+                0x0000000000000cf0                __prologue_saves__
  .text.libgcc.prologue
-                0x0000000000000ce8       0x36 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_epilogue.o)
-                0x0000000000000ce8                __epilogue_restores__
-                0x0000000000000d1e                . = ALIGN (0x2)
+                0x0000000000000d28       0x36 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_epilogue.o)
+                0x0000000000000d28                __epilogue_restores__
+ .text.avr-libc
+                0x0000000000000d5e      0x1b0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
+                0x0000000000000d5e                __ftoa_engine
+ .text.avr-libc
+                0x0000000000000f0e       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x0000000000000f0e                strnlen_P
+ .text.avr-libc
+                0x0000000000000f24       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x0000000000000f24                strnlen
+ .text.avr-libc
+                0x0000000000000f3a       0x24 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
+                0x0000000000000f3a                fprintf
+ .text.avr-libc
+                0x0000000000000f5e       0x60 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x0000000000000f5e                fputc
+ .text.avr-libc
+                0x0000000000000fbe       0xbc c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                0x0000000000000fbe                __ultoa_invert
+                0x000000000000107a                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x0000000000000d1e        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
-                0x0000000000000d1e                _exit
-                0x0000000000000d1e                exit
+ .fini9         0x000000000000107a        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x000000000000107a                _exit
+                0x000000000000107a                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -445,11 +462,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x0000000000000d1e        0x4 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x000000000000107a        0x4 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x0000000000000d22                _etext = .
+                0x000000000000107e                _etext = .
 
-.data           0x0000000000800100       0x40 load address 0x0000000000000d22
+.data           0x0000000000800100       0x14 load address 0x000000000000107e
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -457,67 +474,63 @@ END GROUP
                 0x0000000000800100                lcd_str
  *(.gnu.linkonce.d*)
  *(.rodata)
- .rodata        0x000000000080010e        0xa build/default/production/main.o
  *(.rodata*)
  .rodata.main.str1.1
-                0x0000000000800118       0x27 build/default/production/main.o
-                                         0x31 (size before relaxing)
+                0x000000000080010e        0x5 build/default/production/main.o
  *(.gnu.linkonce.r*)
-                0x0000000000800140                . = ALIGN (0x2)
- *fill*         0x000000000080013f        0x1 
-                0x0000000000800140                _edata = .
-                0x0000000000800140                PROVIDE (__data_end, .)
+                0x0000000000800114                . = ALIGN (0x2)
+ *fill*         0x0000000000800113        0x1 
+                0x0000000000800114                _edata = .
+                0x0000000000800114                PROVIDE (__data_end, .)
 
-.bss            0x0000000000800140        0xd
-                0x0000000000800140                PROVIDE (__bss_start, .)
+.bss            0x0000000000800114        0xe
+                0x0000000000800114                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
+ .bss.prevSec   0x0000000000800114        0x1 build/default/production/main.o
+                0x0000000000800114                prevSec
  .bss.alarmState
-                0x0000000000800140        0x2 build/default/production/main.o
-                0x0000000000800140                alarmState
+                0x0000000000800115        0x2 build/default/production/main.o
+                0x0000000000800115                alarmState
  .bss.configState
-                0x0000000000800142        0x2 build/default/production/main.o
-                0x0000000000800142                configState
+                0x0000000000800117        0x2 build/default/production/main.o
+                0x0000000000800117                configState
  .bss.timeState
-                0x0000000000800144        0x2 build/default/production/main.o
-                0x0000000000800144                timeState
+                0x0000000000800119        0x2 build/default/production/main.o
+                0x0000000000800119                timeState
  .bss.esc_seen.1850
-                0x0000000000800146        0x1 build/default/production/lcd.o
+                0x000000000080011b        0x1 build/default/production/lcd.o
  *(COMMON)
- COMMON         0x0000000000800147        0x6 build/default/production/main.o
-                0x0000000000800147                almSeconds
-                0x0000000000800148                Hours
-                0x0000000000800149                almMinutes
-                0x000000000080014a                almHours
-                0x000000000080014b                Minutes
-                0x000000000080014c                Seconds
-                0x000000000080014d                PROVIDE (__bss_end, .)
-                0x0000000000000d22                __data_load_start = LOADADDR (.data)
-                0x0000000000000d62                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x000000000080011c        0x6 build/default/production/main.o
+                0x000000000080011c                almSeconds
+                0x000000000080011d                Hours
+                0x000000000080011e                almMinutes
+                0x000000000080011f                almHours
+                0x0000000000800120                Minutes
+                0x0000000000800121                Seconds
+                0x0000000000800122                PROVIDE (__bss_end, .)
+                0x000000000000107e                __data_load_start = LOADADDR (.data)
+                0x0000000000001092                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x000000000080014d        0x0
+.noinit         0x0000000000800122        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x000000000080014d                _end = .
+                0x0000000000800122                _end = .
                 [!provide]                        PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0
  *(.eeprom*)
                 0x0000000000810000                __eeprom_end = .
 
-.fuse           0x0000000000820000        0x3
+.fuse
  *(.fuse)
- .fuse          0x0000000000820000        0x3 build/default/production/main.o
-                0x0000000000820000                __fuse
  *(.lfuse)
  *(.hfuse)
  *(.efuse)
 
-.lock           0x0000000000830000        0x1
+.lock
  *(.lock*)
- .lock          0x0000000000830000        0x1 build/default/production/main.o
-                0x0000000000830000                __lock
 
 .signature
  *(.signature*)
@@ -545,14 +558,13 @@ END GROUP
 
 .comment        0x0000000000000000       0x5c
  *(.comment)
- .comment       0x0000000000000000       0x30 build/default/production/main.o
-                                         0x31 (size before relaxing)
- .comment       0x0000000000000030       0x31 build/default/production/hd44780.o
- .comment       0x0000000000000030       0x31 build/default/production/lcd.o
- .comment       0x0000000000000030       0x31 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
- .comment       0x0000000000000030       0x31 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
- .comment       0x0000000000000030       0x2c c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(vfprintf_std.o)
+ .comment       0x0000000000000000       0x2c c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libprintf_flt.a(vfprintf_flt.o)
                                          0x2d (size before relaxing)
+ .comment       0x000000000000002c       0x30 build/default/production/main.o
+                                         0x31 (size before relaxing)
+ .comment       0x000000000000005c       0x31 build/default/production/hd44780.o
+ .comment       0x000000000000005c       0x31 build/default/production/lcd.o
+ .comment       0x000000000000005c       0x31 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
  .comment       0x000000000000005c       0x31 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
 
 .note.gnu.avr.deviceinfo
