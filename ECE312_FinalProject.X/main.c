@@ -48,9 +48,14 @@ volatile int timeState = 0;
 volatile int configState = 0;
 volatile int alarmState = 0;
 volatile uint8_t prevSec = 0;
+volatile uint8_t prevAlmSec = 0;
+volatile int counter, almCounter;
 
 void mcu_Init();
-void printTime();
+void clkIncrement();
+void almDecrement();
+void printClkTime();
+void printAlmTime();
 
 ISR(INT0_vect, ISR_BLOCK) {
     /* PD6 (SW1) -- Toggle between Hours and Minutes
@@ -135,11 +140,9 @@ FILE lcd_str = FDEV_SETUP_STREAM ( lcd_putchar , NULL , _FDEV_SETUP_WRITE); // t
 int main(void) {
     mcu_Init(); // Initialize registers
     lcd_init();
-    int counter = 0;
-    int almCounter = 0;
     sei();
     
-    alarmState = 1;
+    //alarmState = 1;
     almMinutes = 1;
     almSeconds = 30;
     
@@ -151,72 +154,31 @@ int main(void) {
             if (Seconds == 60) {
                 prevSec = 0;
             }
-//            fprintf(&lcd_str, "\x1b\x01");
-//            printTime();
-            fprintf(&lcd_str, "\x1b\x01%u", almSeconds);
+            fprintf(&lcd_str, "\x1b\x01");
+            printClkTime();
         }
     
         prevSec = Seconds;
+
+        if (prevAlmSec != almSeconds) {
+            if (almSeconds == 59) {
+                prevAlmSec = 59;
+            }
+//            fprintf(&lcd_str, "\x1b\x01");
+            printAlmTime();
+//            fprintf(&lcd_str, "\x1b\x01%u:%u:%u", almHours, almMinutes, almSeconds);
+        }
+        
+        
+        prevAlmSec = almSeconds;
         
         cli();
-        
-       /* This chain of if statements is to determine when to change the time on the clock*/
-        counter++; // counter is in ms
-        if (counter == 1000) {
-            Seconds++; // counter = 1000 means that 1 seconds has passed
-            counter = 0;
-        }
-        if (Seconds == 60) {
-            Minutes++; // seconds = 60 means 1 minute has passed
-            Seconds = 0;
-        }
-        if (Minutes == 60) {
-            Hours++; // minutes = 60 means 1 hour has passed
-            Minutes = 0;
-        }
-        if (Hours == 24) {
-            Hours = 0; // hours = 24 means that we are back to 0
-        }
-        
-        /* This chain of if statements is for counting down the alarm*/
-        if (alarmState == 1) {
-            almCounter++; // almCounter is in ms
-        }
-        almCounter++;
-        if(almCounter == 1000 && alarmState == 1){
-            if (almSeconds <= 59 && almSeconds > 0){
-                almSeconds--;
-            } else if (almSeconds == 0 && almMinutes > 0){
-                almMinutes--;
-                almSeconds = 59;
-            }
-            almCounter = 0;
-        }
-        if (almSeconds == 0 && alarmState == 1){
-            if (almMinutes > 0) {
-                almMinutes--;
-                almSeconds = 59;
-            }
-            if (almMinutes <= 59 && almMinutes > 0){
-                almMinutes--;
-            }
-        }
-        if (almMinutes == 0 && alarmState == 1){
-            if (almHours > 0) {
-                almHours--;
-                almMinutes = 59;
-            }
-            if (almHours <= 60 && almHours > 0) {
-                almHours--;
-            }
-        }  
-        if (almHours == 0 && almMinutes == 0 && almSeconds == 0 && alarmState == 1){
-                // Trigger alarm
-                OCR0A = 78; //50% duty cycle at equilibrium
-            }
-        if (alarmState == 0) {
-            almHours = 99;
-        }
+        clkIncrement();
+        almDecrement();
+
+//        if (alarmState == 0) {
+//            almHours = 99;
+//        }
         sei();
         
         if(alarmState == 1) {
@@ -254,18 +216,77 @@ void mcu_Init(){
     TCCR0B = (1<<WGM02) | (1<<CS01); //mode 5, pre-scaler = 8
 }
 
-void printTime(){
+void clkIncrement(){
+       /* This chain of if statements is to determine when to change the time on the clock*/
+        counter++; // counter is in ms
+        if (counter == 1000) {
+            Seconds++; // counter = 1000 means that 1 seconds has passed
+            counter = 0;
+        }
+        if (Seconds == 60) {
+            Minutes++; // seconds = 60 means 1 minute has passed
+            Seconds = 0;
+        }
+        if (Minutes == 60) {
+            Hours++; // minutes = 60 means 1 hour has passed
+            Minutes = 0;
+        }
+        if (Hours == 24) {
+            Hours = 0; // hours = 24 means that we are back to 0
+        }
+}
+
+void almDecrement(){
+        /* This chain of if statements is for counting down the alarm*/
+        if (1>0) {
+            almCounter++; // almCounter is in ms
+            if(almCounter == 1000){
+                if (almSeconds <= 59 && almSeconds > 0){
+                    almSeconds--;
+                } else if (almSeconds == 0 && almMinutes > 0){
+                    almMinutes--;
+                    almSeconds = 59;
+                }
+                almCounter = 0;
+            }
+            if (almSeconds == 0){
+                if (almMinutes > 0) {
+                    almMinutes--;
+                    almSeconds = 59;
+                }
+                if (almMinutes <= 59 && almMinutes > 0){
+                    almMinutes--;
+                }
+            }
+            if (almMinutes == 0){
+                if (almHours > 0) {
+                    almHours--;
+                    almMinutes = 59;
+                }
+                if (almHours <= 60 && almHours > 0) {
+                    almHours--;
+                }
+            }  
+        }
+
+        if (almHours == 0 && almMinutes == 0 && almSeconds == 0 && alarmState == 1){
+                // Trigger alarm
+                OCR0A = 78; //50% duty cycle at equilibrium
+            }    
+}
+
+void printClkTime(){
     char clkBuffer[20];
-    char almBuffer[20];
     clkBuffer[0] = "\0";
-    almBuffer[0] = "\0";
-    
+
     sprintf(clkBuffer, "%02u:%02u:%02u", Hours, Minutes, Seconds);
     fprintf(&lcd_str, "Clock   %s", clkBuffer);
+}
+
+void printAlmTime(){ 
+    char almBuffer[20];   
+    almBuffer[0] = "\0";
     
-//    if (alarmState == 1) {
-//        sprintf(almBuffer, "%02u:%02u:%02u", almHours, almMinutes, almSeconds);
-//        fprintf(&lcd_str, "\x1b\x40Alarm   %s", almBuffer); 
-//    }
-    
+    sprintf(almBuffer, "%02u:%02u:%02u", almHours, almMinutes, almSeconds);
+    fprintf(&lcd_str, "Alarm   %s", almBuffer); 
 }
