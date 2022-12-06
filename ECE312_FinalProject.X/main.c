@@ -72,17 +72,20 @@ int main(void) {
 //    /************************** FOR TESTING **********************************/
 //    almState = 1;
 //    almMinutes = 0;
-//    almSeconds = 50;
+//    almSeconds = 10;
 //    /*************************************************************************/
     mcu_Init(); // Initialize registers
     sei();
     
-    lcd_init();
-    fprintf(&lcd_str, "\x1b\x0c");
+    lcd_init(); // Initialize LCD 16X2
+    fprintf(&lcd_str, "\x1b\x0c"); // Turn cursor off
 
     while(1){
         if (setMode == 0) {
             clkMode(); // Default mode to display the current clock time and alarm time
+            if (almHours == 0 && almMinutes == 0 && almSeconds == 0 && almState == 1){
+                // Trigger alarm
+                OCR0A = 39;} //50% duty cycle at equilibrium
         } else {
             timeChange(); // Mode to change either the clock or alarm
         }
@@ -96,7 +99,7 @@ void mcu_Init(){
     PORTD |= (1<<PD2)|(1<<PD3)|(1<<PD4)|(1<<PD5)|(1<<PD7); // Enable pull-up on PD2, PD3, PD4, PD5, PD7
     
     DDRD |= (1<<PD6); // Initialize OC0A as an output
-    PORTD |= (1<<PD6); // Output low on PD6
+    PORTD &= ~(1<<PD6); // Output low on PD6
     
     DDRB |= (1<<PB0); // Make PB0 an output
     PORTB &= ~(1<<PB0); // Output low
@@ -111,9 +114,9 @@ void mcu_Init(){
     EICRA &= ~((1<<ISC01)|(1<<ISC00)); // Low level of INT0 generates an interrupt request
     EIMSK |= (1<<INT0)|(1<<INT1); // Enable external interrupt 0
        
-//    //initialize PWM, N=8
-//    TCCR0A = (1<<WGM00) | (1<<COM0A1); //set OC0A on compare-match when down-count
-//    TCCR0B = (1<<WGM02) | (1<<CS01); //mode 5, pre-scaler = 8
+    //initialize PWM, N=8
+    TCCR0A = (1<<WGM00) | (1<<COM0A1); //MODE 1, set OC0A on compare-match when down-count
+    TCCR0B = (1<<CS01); //pre-scaler = 8
     
     TCCR2A = 0;
 }
@@ -170,11 +173,6 @@ void almDecrement(){
                 }
             }  
         }
-
-        if (almHours == 0 && almMinutes == 0 && almSeconds == 0 && almState == 1){
-                // Trigger alarm
-                OCR0A = 250; //50% duty cycle at equilibrium
-            }    
 }
 
 void printClkTime(){
