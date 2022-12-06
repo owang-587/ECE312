@@ -39,7 +39,7 @@
 */
 volatile uint8_t Hours, Minutes, Seconds = 0;
 volatile uint8_t almHours, almMinutes, almSeconds = 0;
-volatile int timeState, configState, almState = 0;
+volatile int timeState, cfgState, almState = 0;
 volatile int setMode = 0;
 volatile uint8_t prevSec, prevAlmSec = 0;
 volatile int counter, almCounter = 0;
@@ -69,11 +69,11 @@ ISR(INT1_vect){
 FILE lcd_str = FDEV_SETUP_STREAM ( lcd_putchar , NULL , _FDEV_SETUP_WRITE); // to create global variable for LCD stream
 
 int main(void) {
-    /************************** FOR TESTING **********************************/
-    almState = 1;
-    almMinutes = 0;
-    almSeconds = 50;
-    /*************************************************************************/
+//    /************************** FOR TESTING **********************************/
+//    almState = 1;
+//    almMinutes = 0;
+//    almSeconds = 50;
+//    /*************************************************************************/
     mcu_Init(); // Initialize registers
     sei();
     
@@ -96,7 +96,7 @@ void mcu_Init(){
     PORTD |= (1<<PD2)|(1<<PD3)|(1<<PD4)|(1<<PD5)|(1<<PD7); // Enable pull-up on PD2, PD3, PD4, PD5, PD7
     
     DDRD |= (1<<PD6); // Initialize OC0A as an output
-    PORTD &= ~(1<<PD6); // Output low on PD6
+    PORTD |= (1<<PD6); // Output low on PD6
     
     DDRB |= (1<<PB0); // Make PB0 an output
     PORTB &= ~(1<<PB0); // Output low
@@ -111,9 +111,9 @@ void mcu_Init(){
     EICRA &= ~((1<<ISC01)|(1<<ISC00)); // Low level of INT0 generates an interrupt request
     EIMSK |= (1<<INT0)|(1<<INT1); // Enable external interrupt 0
        
-    //initialize PWM, N=8
-    TCCR0A = (1<<WGM00) | (1<<COM0A1); //set OC0A on compare-match when down-count
-    TCCR0B = (1<<WGM02) | (1<<CS01); //mode 5, pre-scaler = 8
+//    //initialize PWM, N=8
+//    TCCR0A = (1<<WGM00) | (1<<COM0A1); //set OC0A on compare-match when down-count
+//    TCCR0B = (1<<WGM02) | (1<<CS01); //mode 5, pre-scaler = 8
     
     TCCR2A = 0;
 }
@@ -202,7 +202,6 @@ void clkMode(){
         }  
         fprintf(&lcd_str, "\x1b\x01");
         printClkTime();
-        //fprintf(&lcd_str, "%d  %d  %d", almState, configState, timeState);
     }
 
     cli();
@@ -248,5 +247,75 @@ void clkMode(){
 }
 
 void timeChange(){
+    /* PD7 (SW1) -- Toggle between Hours and Minutes
+    PD5 (SW2) -- Increment the selected value
+    PD4 (SW3) -- Toggle between setting the Alarm and setting the Clock 
+    configState == 0 -- Select Alarm
+    configState == 1 -- Select Clock
+    timeState == 0 -- Select Hours
+    timeState == 1 -- Select Minutes
+    almState == 0 -- Alarm is not set
+    almState == 1 -- Alarm is set*/
     
+    if(!(PIND & (1<<PD7))) {
+        _delay_ms(25); // Button debouncing
+        timeState ^= 1; // Toggle the time state
+    }
+    
+    if(!(PIND & (1<<PD4))) {
+        _delay_ms(25); // Button debouncing
+        cfgState ^= 1;
+    }
+    
+    // If PD5 button is pressed and the alarm is selected for changing, increment selected time value
+        if (!(PIND & (1<<PD5)) && cfgState == 0) {
+            _delay_ms(25);
+            if (timeState == 0 && almHours < 23) { // Increment hours from 0 to 23 hours
+                almHours++;
+            } else if (timeState == 0 && almHours == 23) { // When incrementing at 23, reset to 0 hours which is equivalent to 24 hours
+                almHours = 0;
+            } else if (timeState == 0 && almHours > 24) {
+                almHours = 0;
+            } else if (timeState == 1 && almMinutes < 59) { // Increment minutes from 0 to 59 minutes
+                almMinutes++;
+            } else if (timeState == 1 && almMinutes == 59) { // When incrementing at 59 minutes, reset to 0 minutes which is equivalent to 60 minutes
+                almMinutes = 0;
+            }
+        }
+
+        // If PD5 button is pressed and the clock is selected for changing, increment selected time value
+        if (!(PIND & (1<<PD5)) && cfgState == 1) {
+            _delay_ms(25);
+            if (timeState == 0 && Hours < 23) { // Increment hours from 0 to 23 hours
+                Hours++;
+            } else if (timeState == 0 && Hours == 23) { // When incrementing at 23, reset to 0 hours which is equivalent to 24 hours
+                Hours = 0;
+            } else if (timeState == 1 && Minutes < 59) { // Increment minutes from 0 to 59 minutes
+                Minutes++;
+            } else if (timeState == 1 && Minutes == 59) { // When incrementing at 59 minutes, reset to 0 minutes which is equivalent to 60 minutes
+                Minutes = 0;
+            }
+        }
+    
+    if (almHours != 99 && (almHours > 0 || almMinutes > 0)) {
+        almState = 1;
+    }
+    
+    _delay_ms(1000);
+    if (cfgState == 0 && timeState == 0) {
+        // This if is for setting alarm hours
+        fprintf(&lcd_str, "\x1b\x01  Alm Hours: %u", almHours);
+    }
+    if (cfgState == 0 && timeState == 1) {
+        // This if is for setting alarm minutes
+        fprintf(&lcd_str, "\x1b\x01 Alm Minutes: %u", almMinutes);
+    }
+    if (cfgState == 1 && timeState == 0) {
+        // This if is for setting clock hours
+        fprintf(&lcd_str, "\x1b\x01    Hours: %u", Hours);
+    }
+    if (cfgState == 1 && timeState == 1) {
+        // This if is for setting clock minutes
+        fprintf(&lcd_str, "\x1b\x01   Minutes: %u", Minutes);
+    }
 }
