@@ -1,4 +1,5 @@
 build/default/production/main.o.d build/default/production/main.o: main.c \
+ defines.h \
  c:\users\james\mplabxprojects\avr8-gnu-toolchain-win32_x86_64\avr\include\stdio.h \
  c:\users\james\mplabxprojects\avr8-gnu-toolchain-win32_x86_64\avr\include\inttypes.h \
  c:\users\james\mplabxprojects\avr8-gnu-toolchain-win32_x86_64\lib\gcc\avr\7.3.0\include\stdint.h \
@@ -20,7 +21,9 @@ build/default/production/main.o.d build/default/production/main.o: main.c \
  c:\users\james\mplabxprojects\avr8-gnu-toolchain-win32_x86_64\avr\include\util\delay.h \
  c:\users\james\mplabxprojects\avr8-gnu-toolchain-win32_x86_64\avr\include\util\delay_basic.h \
  c:\users\james\mplabxprojects\avr8-gnu-toolchain-win32_x86_64\avr\include\math.h \
- defines.h lcd.h hd44780.h
+ lcd.h hd44780.h
+
+defines.h:
 
 c:\users\james\mplabxprojects\avr8-gnu-toolchain-win32_x86_64\avr\include\stdio.h:
 
@@ -63,8 +66,6 @@ c:\users\james\mplabxprojects\avr8-gnu-toolchain-win32_x86_64\avr\include\util\d
 c:\users\james\mplabxprojects\avr8-gnu-toolchain-win32_x86_64\avr\include\util\delay_basic.h:
 
 c:\users\james\mplabxprojects\avr8-gnu-toolchain-win32_x86_64\avr\include\math.h:
-
-defines.h:
 
 lcd.h:
 
