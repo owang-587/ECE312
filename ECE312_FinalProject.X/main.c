@@ -156,13 +156,11 @@ int main(void) {
                 cli();
                 prevSec = 0;
                 sei();
-            }
-            
+            }  
             fprintf(&lcd_str, "\x1b\x01");
             printClkTime();
         }
-//        fprintf(&lcd_str, "\x1b\x01");
-//        printClkTime();
+
         cli();
         prevSec = Seconds;
         sei();
@@ -177,8 +175,7 @@ int main(void) {
             fprintf(&lcd_str, "\x1b\xc0");
             printAlmTime();
         }    
-//        fprintf(&lcd_str, "\x1b\xc0");
-//        printAlmTime();
+        
         cli();
         prevAlmSec = almSeconds;
         sei();
