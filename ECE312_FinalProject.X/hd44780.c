@@ -188,13 +188,13 @@ hd44780_init(void)
   SET(DDR, HD44780_E);
   ASSIGN(DDR, HD44780_D4, 0x0F);
 
-  _delay_ms(15);		/* 40 ms needed for Vcc = 2.7 V */
+  _delay_ms(37.5);		/* 40 ms needed for Vcc = 2.7 V */
   hd44780_outnibble(HD44780_FNSET(1, 0, 0) >> 4, 0);
-  _delay_ms(4.1);
+  _delay_ms(10.25);
   hd44780_outnibble(HD44780_FNSET(1, 0, 0) >> 4, 0);
-  _delay_ms(0.1);
+  _delay_ms(0.25);
   hd44780_outnibble(HD44780_FNSET(1, 0, 0) >> 4, 0);
-  _delay_us(37);
+  _delay_us(92.5);
 
   hd44780_outnibble(HD44780_FNSET(0, 1, 0) >> 4, 0);
   hd44780_wait_ready(false);
