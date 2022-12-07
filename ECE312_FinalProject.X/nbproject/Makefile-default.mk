@@ -44,12 +44,6 @@ else
 COMPARISON_BUILD=
 endif
 
-ifdef SUB_IMAGE_ADDRESS
-
-else
-SUB_IMAGE_ADDRESS_COMMAND=
-endif
-
 # Object Directory
 OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 
@@ -110,38 +104,38 @@ endif
 # ------------------------------------------------------------------------------------
 # Rules for buildStep: compile
 ifeq ($(TYPE_IMAGE), DEBUG_RUN)
-${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/28afcfcd437bd576679449eee700dd7b2cdf2532 .generated_files/flags/default/f34f621f18132da04b2c6cf288e26a5a0703fe9f
+${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/db8ea0b8d80bf4420fbf1bdf9cbab36612689c3d .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
 	@${RM} ${OBJECTDIR}/main.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/main.o.d" -MT "${OBJECTDIR}/main.o.d" -MT ${OBJECTDIR}/main.o  -o ${OBJECTDIR}/main.o main.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/hd44780.o: hd44780.c  .generated_files/flags/default/630c1a4a8dfeec9334b44cf7cda069c54fa92172 .generated_files/flags/default/f34f621f18132da04b2c6cf288e26a5a0703fe9f
+${OBJECTDIR}/hd44780.o: hd44780.c  .generated_files/flags/default/310251bf958f1604c2529b198d9a1a9db5525655 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/hd44780.o.d 
 	@${RM} ${OBJECTDIR}/hd44780.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/hd44780.o.d" -MT "${OBJECTDIR}/hd44780.o.d" -MT ${OBJECTDIR}/hd44780.o  -o ${OBJECTDIR}/hd44780.o hd44780.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/lcd.o: lcd.c  .generated_files/flags/default/df29dc36fe3ccc393ae4ca2b220c172ac3dc1eca .generated_files/flags/default/f34f621f18132da04b2c6cf288e26a5a0703fe9f
+${OBJECTDIR}/lcd.o: lcd.c  .generated_files/flags/default/9934e84d95f4ea80d58f101a0a947517a0611d4a .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/lcd.o.d 
 	@${RM} ${OBJECTDIR}/lcd.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS} -g -DDEBUG  -gdwarf-2  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/lcd.o.d" -MT "${OBJECTDIR}/lcd.o.d" -MT ${OBJECTDIR}/lcd.o  -o ${OBJECTDIR}/lcd.o lcd.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
 else
-${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/cb929c312399c6551596948b4f0cef4245375ecb .generated_files/flags/default/f34f621f18132da04b2c6cf288e26a5a0703fe9f
+${OBJECTDIR}/main.o: main.c  .generated_files/flags/default/930d9d5fb31ada4ac6dee3553588c4ee79da071f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/main.o.d 
 	@${RM} ${OBJECTDIR}/main.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/main.o.d" -MT "${OBJECTDIR}/main.o.d" -MT ${OBJECTDIR}/main.o  -o ${OBJECTDIR}/main.o main.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/hd44780.o: hd44780.c  .generated_files/flags/default/98b0f214459314aa350c534f64a33f178f2224d .generated_files/flags/default/f34f621f18132da04b2c6cf288e26a5a0703fe9f
+${OBJECTDIR}/hd44780.o: hd44780.c  .generated_files/flags/default/562a2e0b67256c5c7234f47b754503a5425096cf .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/hd44780.o.d 
 	@${RM} ${OBJECTDIR}/hd44780.o 
 	 ${MP_CC}  $(MP_EXTRA_CC_PRE) -mmcu=atmega328p ${PACK_COMPILER_OPTIONS} ${PACK_COMMON_OPTIONS}  -x c -c -D__$(MP_PROCESSOR_OPTION)__  -funsigned-char -funsigned-bitfields -O1 -ffunction-sections -fdata-sections -fpack-struct -fshort-enums -Wall -MD -MP -MF "${OBJECTDIR}/hd44780.o.d" -MT "${OBJECTDIR}/hd44780.o.d" -MT ${OBJECTDIR}/hd44780.o  -o ${OBJECTDIR}/hd44780.o hd44780.c  -DXPRJ_default=$(CND_CONF)  $(COMPARISON_BUILD) 
 	
-${OBJECTDIR}/lcd.o: lcd.c  .generated_files/flags/default/90df8a74f5a4fa44f53301a1e86c385b9c5fecab .generated_files/flags/default/f34f621f18132da04b2c6cf288e26a5a0703fe9f
+${OBJECTDIR}/lcd.o: lcd.c  .generated_files/flags/default/e2472158fb8acf16050a56c0f7b6dba16cbefbca .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
 	@${RM} ${OBJECTDIR}/lcd.o.d 
 	@${RM} ${OBJECTDIR}/lcd.o 

@@ -38,7 +38,7 @@
         <targetPluginBoard></targetPluginBoard>
         <platformTool>snap</platformTool>
         <languageToolchain>AVR</languageToolchain>
-        <languageToolchainVersion>5.4.0</languageToolchainVersion>
+        <languageToolchainVersion>7.3.0</languageToolchainVersion>
         <platform>3</platform>
       </toolsSet>
       <packs>

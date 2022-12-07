@@ -190,7 +190,7 @@ void printAlmTime(){
 void clkMode(){
     while (!(TIFR1 &(1<<OCF1A)));
     TIFR1 |= (1<<OCF1A); //clear flags
-        
+    
     // Refresh LCD every second for the displayed clock time
     if (prevSec != Seconds) {
         if (Seconds == 60) {
@@ -254,20 +254,26 @@ void timeChange(){
     timeState == 1 -- Select Minutes
     almState == 0 -- Alarm is not set
     almState == 1 -- Alarm is set*/
+    if (cfgState == 1) {
+        Seconds = 0; // Reset seconds when setting the clock
+    }
+    if (cfgState == 0) {
+        almSeconds = 0; // Reset alarm seconds when setting the alarm
+    }
     
     if(!(PIND & (1<<PD7))) {
-        _delay_ms(25); // Button debouncing
+        _delay_ms(50); // Button debouncing
         timeState ^= 1; // Toggle the time state
     }
     
     if(!(PIND & (1<<PD4))) {
-        _delay_ms(25); // Button debouncing
+        _delay_ms(50); // Button debouncing
         cfgState ^= 1;
     }
     
     // If PD5 button is pressed and the alarm is selected for changing, increment selected time value
         if (!(PIND & (1<<PD5)) && cfgState == 0) {
-            _delay_ms(25);
+            _delay_ms(50);
             if (timeState == 0 && almHours < 23) { // Increment hours from 0 to 23 hours
                 almHours++;
             } else if (timeState == 0 && almHours == 23) { // When incrementing at 23, reset to 0 hours which is equivalent to 24 hours
@@ -283,7 +289,7 @@ void timeChange(){
 
         // If PD5 button is pressed and the clock is selected for changing, increment selected time value
         if (!(PIND & (1<<PD5)) && cfgState == 1) {
-            _delay_ms(25);
+            _delay_ms(50);
             if (timeState == 0 && Hours < 23) { // Increment hours from 0 to 23 hours
                 Hours++;
             } else if (timeState == 0 && Hours == 23) { // When incrementing at 23, reset to 0 hours which is equivalent to 24 hours
@@ -299,7 +305,7 @@ void timeChange(){
         almState = 1;
     }
     
-    _delay_ms(1000);
+    _delay_ms(200);
     if (cfgState == 0 && timeState == 0) {
         // This if is for setting alarm hours
         fprintf(&lcd_str, "\x1b\x01  Alm Hours: %u", almHours);
