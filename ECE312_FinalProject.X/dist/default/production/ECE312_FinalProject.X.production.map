@@ -32,7 +32,6 @@ c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr
 Allocating common symbols
 Common symbol       size              file
 
-prevSec             0x1               build/default/production/main.o
 Hours               0x1               build/default/production/main.o
 almMinutes          0x1               build/default/production/main.o
 timeState           0x2               build/default/production/main.o
@@ -51,6 +50,8 @@ Discarded input sections
  .text          0x0000000000000000        0x0 build/default/production/main.o
  .data          0x0000000000000000        0x0 build/default/production/main.o
  .bss           0x0000000000000000        0x0 build/default/production/main.o
+ .bss.almCounter
+                0x0000000000000000        0x2 build/default/production/main.o
  .text          0x0000000000000000        0x0 build/default/production/hd44780.o
  .data          0x0000000000000000        0x0 build/default/production/hd44780.o
  .bss           0x0000000000000000        0x0 build/default/production/hd44780.o
@@ -291,7 +292,7 @@ END GROUP
 .rela.plt
  *(.rela.plt)
 
-.text           0x0000000000000000     0x15fa
+.text           0x0000000000000000     0x15aa
  *(.vectors)
  .vectors       0x0000000000000000       0x68 C:/Program Files/Microchip/MPLABX/v6.05/packs/Microchip/ATmega_DFP/3.0.158/gcc/dev/atmega328p/avr5/crtatmega328p.o
                 0x0000000000000000                __vector_default
@@ -385,87 +386,84 @@ END GROUP
                 0x000000000000086a       0x4c build/default/production/main.o
                 0x000000000000086a                __vector_1
  .text.__vector_2
-                0x00000000000008b6       0x2a build/default/production/main.o
+                0x00000000000008b6       0x2e build/default/production/main.o
                 0x00000000000008b6                __vector_2
  .text.mcu_Init
-                0x00000000000008e0       0x4e build/default/production/main.o
-                0x00000000000008e0                mcu_Init
+                0x00000000000008e4       0x4e build/default/production/main.o
+                0x00000000000008e4                mcu_Init
  .text.clkIncrement
-                0x000000000000092e       0x74 build/default/production/main.o
-                0x000000000000092e                clkIncrement
- .text.almDecrement
-                0x00000000000009a2       0xee build/default/production/main.o
-                0x00000000000009a2                almDecrement
+                0x0000000000000932      0x146 build/default/production/main.o
+                0x0000000000000932                clkIncrement
  .text.printClkTime
-                0x0000000000000a90       0x7e build/default/production/main.o
-                0x0000000000000a90                printClkTime
+                0x0000000000000a78       0x7e build/default/production/main.o
+                0x0000000000000a78                printClkTime
  .text.printAlmTime
-                0x0000000000000b0e       0x7e build/default/production/main.o
-                0x0000000000000b0e                printAlmTime
- .text.clkMode  0x0000000000000b8c      0x164 build/default/production/main.o
-                0x0000000000000b8c                clkMode
+                0x0000000000000af6       0x7e build/default/production/main.o
+                0x0000000000000af6                printAlmTime
+ .text.clkMode  0x0000000000000b74      0x12c build/default/production/main.o
+                0x0000000000000b74                clkMode
  .text.timeChange
-                0x0000000000000cf0      0x2fc build/default/production/main.o
-                0x0000000000000cf0                timeChange
- .text.main     0x0000000000000fec       0x5e build/default/production/main.o
-                0x0000000000000fec                main
+                0x0000000000000ca0      0x2fc build/default/production/main.o
+                0x0000000000000ca0                timeChange
+ .text.main     0x0000000000000f9c       0x5e build/default/production/main.o
+                0x0000000000000f9c                main
  .text.hd44780_outnibble
-                0x000000000000104a       0x1a build/default/production/hd44780.o
+                0x0000000000000ffa       0x1a build/default/production/hd44780.o
  .text.hd44780_innibble
-                0x0000000000001064       0x26 build/default/production/hd44780.o
+                0x0000000000001014       0x26 build/default/production/hd44780.o
  .text.hd44780_outbyte
-                0x000000000000108a       0x20 build/default/production/hd44780.o
-                0x000000000000108a                hd44780_outbyte
+                0x000000000000103a       0x20 build/default/production/hd44780.o
+                0x000000000000103a                hd44780_outbyte
  .text.hd44780_inbyte
-                0x00000000000010aa       0x1e build/default/production/hd44780.o
-                0x00000000000010aa                hd44780_inbyte
+                0x000000000000105a       0x1e build/default/production/hd44780.o
+                0x000000000000105a                hd44780_inbyte
  .text.hd44780_wait_ready
-                0x00000000000010c8        0xc build/default/production/hd44780.o
-                0x00000000000010c8                hd44780_wait_ready
+                0x0000000000001078        0xc build/default/production/hd44780.o
+                0x0000000000001078                hd44780_wait_ready
  .text.hd44780_init
-                0x00000000000010d4       0x74 build/default/production/hd44780.o
-                0x00000000000010d4                hd44780_init
+                0x0000000000001084       0x74 build/default/production/hd44780.o
+                0x0000000000001084                hd44780_init
  .text.lcd_init
-                0x0000000000001148       0x30 build/default/production/lcd.o
-                0x0000000000001148                lcd_init
+                0x00000000000010f8       0x30 build/default/production/lcd.o
+                0x00000000000010f8                lcd_init
  .text.lcd_putchar
-                0x0000000000001178       0x4e build/default/production/lcd.o
-                0x0000000000001178                lcd_putchar
+                0x0000000000001128       0x4e build/default/production/lcd.o
+                0x0000000000001128                lcd_putchar
  .text.libgcc.prologue
-                0x00000000000011c6       0x38 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_prologue.o)
-                0x00000000000011c6                __prologue_saves__
+                0x0000000000001176       0x38 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_prologue.o)
+                0x0000000000001176                __prologue_saves__
  .text.libgcc.prologue
-                0x00000000000011fe       0x36 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_epilogue.o)
-                0x00000000000011fe                __epilogue_restores__
+                0x00000000000011ae       0x36 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_epilogue.o)
+                0x00000000000011ae                __epilogue_restores__
  .text.avr-libc
-                0x0000000000001234      0x1b0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
-                0x0000000000001234                __ftoa_engine
+                0x00000000000011e4      0x1b0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ftoa_engine.o)
+                0x00000000000011e4                __ftoa_engine
  .text.avr-libc
-                0x00000000000013e4       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
-                0x00000000000013e4                strnlen_P
+                0x0000000000001394       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen_P.o)
+                0x0000000000001394                strnlen_P
  .text.avr-libc
-                0x00000000000013fa       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
-                0x00000000000013fa                strnlen
+                0x00000000000013aa       0x16 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(strnlen.o)
+                0x00000000000013aa                strnlen
  .text.avr-libc
-                0x0000000000001410       0x24 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
-                0x0000000000001410                fprintf
+                0x00000000000013c0       0x24 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fprintf.o)
+                0x00000000000013c0                fprintf
  .text.avr-libc
-                0x0000000000001434       0x60 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
-                0x0000000000001434                fputc
+                0x00000000000013e4       0x60 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fputc.o)
+                0x00000000000013e4                fputc
  .text.avr-libc
-                0x0000000000001494       0x60 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fwrite.o)
-                0x0000000000001494                fwrite
+                0x0000000000001444       0x60 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(fwrite.o)
+                0x0000000000001444                fwrite
  .text.avr-libc
-                0x00000000000014f4       0x46 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
-                0x00000000000014f4                sprintf
+                0x00000000000014a4       0x46 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(sprintf.o)
+                0x00000000000014a4                sprintf
  .text.avr-libc
-                0x000000000000153a       0xbc c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
-                0x000000000000153a                __ultoa_invert
-                0x00000000000015f6                . = ALIGN (0x2)
+                0x00000000000014ea       0xbc c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/../../../../avr/lib/avr5\libc.a(ultoa_invert.o)
+                0x00000000000014ea                __ultoa_invert
+                0x00000000000015a6                . = ALIGN (0x2)
  *(.fini9)
- .fini9         0x00000000000015f6        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
-                0x00000000000015f6                _exit
-                0x00000000000015f6                exit
+ .fini9         0x00000000000015a6        0x0 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+                0x00000000000015a6                _exit
+                0x00000000000015a6                exit
  *(.fini9)
  *(.fini8)
  *(.fini8)
@@ -484,11 +482,11 @@ END GROUP
  *(.fini1)
  *(.fini1)
  *(.fini0)
- .fini0         0x00000000000015f6        0x4 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
+ .fini0         0x00000000000015a6        0x4 c:/users/james/mplabxprojects/avr8-gnu-toolchain-win32_x86_64/bin/../lib/gcc/avr/7.3.0/avr5\libgcc.a(_exit.o)
  *(.fini0)
-                0x00000000000015fa                _etext = .
+                0x00000000000015aa                _etext = .
 
-.data           0x0000000000800100       0x9c load address 0x00000000000015fa
+.data           0x0000000000800100       0xa8 load address 0x00000000000015aa
                 0x0000000000800100                PROVIDE (__data_start, .)
  *(.data)
  *(.data*)
@@ -502,70 +500,69 @@ END GROUP
  .rodata.printAlmTime.str1.1
                 0x0000000000800128        0xb build/default/production/main.o
  .rodata.clkMode.str1.1
-                0x0000000000800133       0x20 build/default/production/main.o
+                0x0000000000800133       0x2c build/default/production/main.o
  .rodata.timeChange.str1.1
-                0x0000000000800153       0x46 build/default/production/main.o
+                0x000000000080015f       0x46 build/default/production/main.o
  .rodata.main.str1.1
-                0x0000000000800199        0x3 build/default/production/main.o
+                0x00000000008001a5        0x3 build/default/production/main.o
  *(.gnu.linkonce.r*)
-                0x000000000080019c                . = ALIGN (0x2)
-                0x000000000080019c                _edata = .
-                0x000000000080019c                PROVIDE (__data_end, .)
+                0x00000000008001a8                . = ALIGN (0x2)
+                0x00000000008001a8                _edata = .
+                0x00000000008001a8                PROVIDE (__data_end, .)
 
-.bss            0x000000000080019c       0x15
-                0x000000000080019c                PROVIDE (__bss_start, .)
+.bss            0x00000000008001a8       0x12
+                0x00000000008001a8                PROVIDE (__bss_start, .)
  *(.bss)
  *(.bss*)
- .bss.almCounter
-                0x000000000080019c        0x2 build/default/production/main.o
-                0x000000000080019c                almCounter
- .bss.prevAlmSec
-                0x000000000080019e        0x1 build/default/production/main.o
-                0x000000000080019e                prevAlmSec
- .bss.setMode   0x000000000080019f        0x2 build/default/production/main.o
-                0x000000000080019f                setMode
- .bss.almState  0x00000000008001a1        0x2 build/default/production/main.o
-                0x00000000008001a1                almState
+ .bss.prevSec   0x00000000008001a8        0x1 build/default/production/main.o
+                0x00000000008001a8                prevSec
+ .bss.setMode   0x00000000008001a9        0x2 build/default/production/main.o
+                0x00000000008001a9                setMode
+ .bss.almState  0x00000000008001ab        0x2 build/default/production/main.o
+                0x00000000008001ab                almState
  .bss.almSeconds
-                0x00000000008001a3        0x1 build/default/production/main.o
-                0x00000000008001a3                almSeconds
- .bss.Seconds   0x00000000008001a4        0x1 build/default/production/main.o
-                0x00000000008001a4                Seconds
+                0x00000000008001ad        0x1 build/default/production/main.o
+                0x00000000008001ad                almSeconds
+ .bss.Seconds   0x00000000008001ae        0x1 build/default/production/main.o
+                0x00000000008001ae                Seconds
  .bss.esc_seen.1850
-                0x00000000008001a5        0x1 build/default/production/lcd.o
+                0x00000000008001af        0x1 build/default/production/lcd.o
  *(COMMON)
- COMMON         0x00000000008001a6        0xb build/default/production/main.o
-                0x00000000008001a6                prevSec
-                0x00000000008001a7                Hours
-                0x00000000008001a8                almMinutes
-                0x00000000008001a9                timeState
-                0x00000000008001ab                cfgState
-                0x00000000008001ad                counter
-                0x00000000008001af                almHours
-                0x00000000008001b0                Minutes
-                0x00000000008001b1                PROVIDE (__bss_end, .)
-                0x00000000000015fa                __data_load_start = LOADADDR (.data)
-                0x0000000000001696                __data_load_end = (__data_load_start + SIZEOF (.data))
+ COMMON         0x00000000008001b0        0xa build/default/production/main.o
+                0x00000000008001b0                Hours
+                0x00000000008001b1                almMinutes
+                0x00000000008001b2                timeState
+                0x00000000008001b4                cfgState
+                0x00000000008001b6                counter
+                0x00000000008001b8                almHours
+                0x00000000008001b9                Minutes
+                0x00000000008001ba                PROVIDE (__bss_end, .)
+                0x00000000000015aa                __data_load_start = LOADADDR (.data)
+                0x0000000000001652                __data_load_end = (__data_load_start + SIZEOF (.data))
 
-.noinit         0x00000000008001b1        0x0
+.noinit         0x00000000008001ba        0x0
                 [!provide]                        PROVIDE (__noinit_start, .)
  *(.noinit*)
                 [!provide]                        PROVIDE (__noinit_end, .)
-                0x00000000008001b1                _end = .
+                0x00000000008001ba                _end = .
                 [!provide]                        PROVIDE (__heap_start, .)
 
 .eeprom         0x0000000000810000        0x0
  *(.eeprom*)
                 0x0000000000810000                __eeprom_end = .
 
-.fuse
+.fuse           0x0000000000820000        0x3
  *(.fuse)
+ .fuse          0x0000000000820000        0x3 build/default/production/main.o
+                0x0000000000820000                __fuse
  *(.lfuse)
  *(.hfuse)
  *(.efuse)
 
-.lock
+.lock           0x0000000000830000        0x1
  *(.lock*)
+ .lock          0x0000000000830000        0x1 build/default/production/main.o
+                0x0000000000830000                __lock
 
 .signature
  *(.signature*)

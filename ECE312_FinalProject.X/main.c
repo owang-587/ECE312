@@ -1,13 +1,6 @@
 /* 
  * File:   main.c
- * Author: james
- *
- * Created on December 4, 2022, 3:22 PM
- */
-
-/* 
- * File:   main.c
- * Author: james
+ * Author: james, parker, owen, wasi
  *
  * Created on November 29, 2022, 5:47 PM
  */
@@ -23,13 +16,13 @@
 #include "hd44780.h"
 
 
-//FUSES = {
-//	.low = 0x7F, // LOW {SUT_CKSEL=EXTXOSC_8MHZ_XX_16KCK_14CK_65MS, CKOUT=CLEAR, CKDIV8=SET}
-//	.high = 0xD9, // HIGH {BOOTRST=CLEAR, BOOTSZ=2048W_3800, EESAVE=CLEAR, WDTON=CLEAR, SPIEN=SET, DWEN=CLEAR, RSTDISBL=CLEAR}
-//	.extended = 0xFF, // EXTENDED {BODLEVEL=DISABLED}
-//};
-//
-//LOCKBITS = 0xFF; // {LB=NO_LOCK, BLB0=NO_LOCK, BLB1=NO_LOCK}
+FUSES = {
+	.low = 0x7F, // LOW {SUT_CKSEL=EXTXOSC_8MHZ_XX_16KCK_14CK_65MS, CKOUT=CLEAR, CKDIV8=SET}
+	.high = 0xD9, // HIGH {BOOTRST=CLEAR, BOOTSZ=2048W_3800, EESAVE=CLEAR, WDTON=CLEAR, SPIEN=SET, DWEN=CLEAR, RSTDISBL=CLEAR}
+	.extended = 0xFF, // EXTENDED {BODLEVEL=DISABLED}
+};
+
+LOCKBITS = 0xFF; // {LB=NO_LOCK, BLB0=NO_LOCK, BLB1=NO_LOCK}
 
 /*
     Hours. Minutes correspond to the clock
@@ -41,12 +34,11 @@ volatile uint8_t Hours, Minutes, Seconds = 0;
 volatile uint8_t almHours, almMinutes, almSeconds = 0;
 volatile int timeState, cfgState, almState = 0;
 volatile int setMode = 0;
-volatile uint8_t prevSec, prevAlmSec = 0;
+volatile uint8_t prevSec = 0;
 volatile int counter, almCounter = 0;
 
 void mcu_Init();
 void clkIncrement();
-void almDecrement();
 void printClkTime();
 void printAlmTime();
 void clkMode();
@@ -61,6 +53,7 @@ ISR(INT0_vect, ISR_BLOCK) {
 ISR(INT1_vect){
     almState = 0; // Setting the alarm countdown off
     almHours = 99; // No alarm time
+    almMinutes = 0; 
     
     OCR0A = 0; //0% duty cycle at equilibrium
     PORTB &= ~(1<<PB0); // Toggling the LED to off   
@@ -69,11 +62,6 @@ ISR(INT1_vect){
 FILE lcd_str = FDEV_SETUP_STREAM ( lcd_putchar , NULL , _FDEV_SETUP_WRITE); // to create global variable for LCD stream
 
 int main(void) {
-//    /************************** FOR TESTING **********************************/
-//    almState = 1;
-//    almMinutes = 0;
-//    almSeconds = 10;
-//    /*************************************************************************/
     mcu_Init(); // Initialize registers
     sei();
     
@@ -124,8 +112,32 @@ void mcu_Init(){
 void clkIncrement(){
        /* This chain of if statements is to determine when to change the time on the clock*/
         counter++; // counter is in ms
-        if (counter == 1000) {
+        if (counter == 1000 && almState == 0) {
             Seconds++; // counter = 1000 means that 1 seconds has passed
+            counter = 0;
+        }
+        if (counter == 1000 && almState == 1) {
+            Seconds++; // counter = 1000 means that 1 seconds has passed
+            if (almSeconds <= 59 && almSeconds > 0){
+                almSeconds--;
+            }
+            if (almSeconds == 0 && almMinutes != 59){
+                if (almMinutes < 59 && almMinutes > 0){
+                    almMinutes--;
+                    almSeconds = 59;
+                }
+            }
+            if (almSeconds == 0 && almMinutes == 59){
+                if (almMinutes > 0){
+                    almSeconds = 59;
+                }
+            }
+            if (almMinutes == 0){
+                if (almHours <= 23 && almHours > 0) {
+                    almHours--;
+                    almMinutes = 59;
+                }
+            } 
             counter = 0;
         }
         if (Seconds == 60) {
@@ -138,40 +150,6 @@ void clkIncrement(){
         }
         if (Hours == 24) {
             Hours = 0; // hours = 24 means that we are back to 0
-        }
-}
-
-void almDecrement(){
-        /* This chain of if statements is for counting down the alarm*/
-        if (almState == 1) {
-            almCounter++; // almCounter is in ms
-            if(almCounter == 1000){
-                if (almSeconds <= 59 && almSeconds > 0){
-                    almSeconds--;
-                } else if (almSeconds == 0 && almMinutes > 0){
-                    almMinutes--;
-                    almSeconds = 59;
-                }
-                almCounter = 0;
-            }
-            if (almSeconds == 0){
-                if (almMinutes > 0) {
-                    almMinutes--;
-                    almSeconds = 59;
-                }
-                if (almMinutes <= 59 && almMinutes > 0){
-                    almMinutes--;
-                }
-            }
-            if (almMinutes == 0){
-                if (almHours > 0) {
-                    almHours--;
-                    almMinutes = 59;
-                }
-                if (almHours <= 60 && almHours > 0) {
-                    almHours--;
-                }
-            }  
         }
 }
 
@@ -198,38 +176,24 @@ void clkMode(){
             prevSec = 0;
             sei();
         }  
+        
         fprintf(&lcd_str, "\x1b\x01");
         printClkTime();
+        fprintf(&lcd_str, "\x1b\xc0");
+        printAlmTime();
+        if (almHours == 0 &&  almMinutes == 0 && almSeconds == 0 && almState == 1) {
+            fprintf(&lcd_str, "\x1b\xc0Reset Alarm     ");
+        } else if (almHours == 0 &&  almMinutes == 0 && almSeconds == 0 && almState == 0) {
+            fprintf(&lcd_str, "\x1b\xc0Set Alarm       ");
+        } else if (almHours == 99 && almState == 0) {
+            fprintf(&lcd_str, "\x1b\xc0Set Alarm       ");
+        }
     }
 
     cli();
+    
     prevSec = Seconds;
-    sei();
-        
-    // Refresh the LCD every second for the displayed alarm time
-    if (prevAlmSec != almSeconds) {
-        if (almSeconds == 59) {
-            cli();
-            prevAlmSec = 59;
-            sei();
-        }
-        fprintf(&lcd_str, "\x1b\xc0");
-        printAlmTime();
-    } else if (almHours == 0 &&  almMinutes == 0 && almSeconds == 0 && almState == 1) {
-        fprintf(&lcd_str, "\x1b\xc0Reset Alarm");
-    } else if (almHours == 0 &&  almMinutes == 0 && almSeconds == 0 && almState == 0) {
-        fprintf(&lcd_str, "\x1b\xc0Set Alarm");
-    } else if (almHours == 99 && almState == 0) {
-        fprintf(&lcd_str, "\x1b\xc0Set Alarm");
-    }
-        
-    cli();
-    prevAlmSec = almSeconds;
-    sei();
-        
-    cli();
     clkIncrement();
-    almDecrement();
 
     if (almState == 0) {
         almHours = 99;
