@@ -11,6 +11,7 @@ The set and clear functions are accessed via 5 different buttons.
 3) To increment the currently selected value, press SW2. There is no decrement button so you will have to cycle through to the TOP value (60 for minutes and 24 for hours) where the MCU will reset the value back to 0.
 4) To toggle between selecting hours or minutes, press SW1. The hours for the clock are labeled “Hours,” the minutes for the clock are labeled “Minutes,” the hours for the alarm are labeled “Alm Hours,” and the minutes for the alarm are labeled “Alm Minutes.”
 5) To finish setting your clock or alarm, press SW5. The device will automatically switch back to displaying the selected clock and/or alarm. When an alarm is set, the LED will be on.
+
 **In order to reset the alarm:**
 1) The alarm will trigger if the alarm was set and decremented to the value of 00:00:00. An LED will be on and the piezo buzzer will be ringing when the alarm needs to be reset.
 2) To reset the alarm, simply press SW4.
