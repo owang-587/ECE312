@@ -18,3 +18,6 @@ The set and clear functions are accessed via 5 different buttons.
 
 ### Contributions
 James Shin ([jjshin1](https://github.com/jjshin1)), Parker Kung ([parkung02](https://github.com/parkung02)), Wasi Hossein ([wasihsn](https://github.com/wasihsn)), Owen Wang (me)
+
+
+![20221208_144835](https://user-images.githubusercontent.com/77896993/210302765-ab94bade-c7c4-4b8a-a37d-62efc20421d5.jpg)
