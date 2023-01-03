@@ -17,4 +17,4 @@ The set and clear functions are accessed via 5 different buttons.
 2) To reset the alarm, simply press SW4.
 
 ### Contributions
-James Shin ([jjshin1](https://github.com/jjshin1)), Parker Kung (parkung02), Wasi Hossein (wasihsn), Owen Wang (me)
+James Shin ([jjshin1](https://github.com/jjshin1)), Parker Kung ([parkung02](https://github.com/parkung02)), Wasi Hossein ([wasihsn](https://github.com/wasihsn)), Owen Wang (me)
