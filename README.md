@@ -2,7 +2,7 @@
 
 ### Basic Functions
 Allows users to set and clear both clock and alarm. Both displayed on a 24 hour clock with hour:minute:second (00:00:00) format. 
-The set and clear functions are accessed via 5 different buttons. 
+The set and clear functions are accessed via 5 different buttons. Programmed and functionalized with Microchip ATmega328P MCU.
 
 ### Operating Principle
 **Setting the Clock / Arming the Alarm:**
